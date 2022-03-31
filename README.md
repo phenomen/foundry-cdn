@@ -1,4 +1,4 @@
-# Foundry Static CDN
+# Static CDN
 
 Шаблон для создания хранилища ресурсов на статичных хостингах, вроде [Netlify](https://www.netlify.com/) и [Vercel](https://vercel.com/).
 
