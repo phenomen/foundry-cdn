@@ -10,8 +10,8 @@ const assets = fs.readdirSync("./public/assets/" + dir + "/");
 <div class="grid grid-cols-3 gap-4">
   {assets.map((asset) => (
     <div class="flex flex-col text-center justify-items-center">
-      <a href={'assets' + '/' + dir + '/' + asset} class="mx-auto">
-        <img src={'assets' + '/' + dir + '/' + asset} alt={asset} class="h-64 aspect-square" />
+      <a href={'/assets' + '/' + dir + '/' + asset} class="mx-auto">
+        <img src={'/assets' + '/' + dir + '/' + asset} alt={asset} class="h-64 aspect-square" />
       </a>
       <span class="text-xs">{asset}</span>
     </div>
