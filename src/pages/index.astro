@@ -1,0 +1,11 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import DirList from '../components/DirList.svelte';
+
+const dirs = ['pictures', 'maps', 'tokens', 'tiles']
+---
+
+<DefaultLayout>
+    <h1 class="font-medium text-xl my-10">Foundry CDN</h1>
+    <DirList dirs={dirs} />
+</DefaultLayout>

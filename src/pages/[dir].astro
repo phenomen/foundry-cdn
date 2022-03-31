@@ -1,0 +1,19 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import ReadDir from '../components/ReadDir.svelte';
+
+export function getStaticPaths() {
+  return [
+    {params: {dir: 'pictures'}},
+    {params: {dir: 'maps'}},
+    {params: {dir: 'tokens'}},
+    {params: {dir: 'tiles'}},
+  ];
+}
+
+const { dir } = Astro.request.params;
+---
+
+<DefaultLayout>
+	<ReadDir dir={dir} />
+</DefaultLayout>
