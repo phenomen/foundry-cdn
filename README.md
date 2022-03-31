@@ -6,7 +6,7 @@
 
 Разместите файлы ваших ресурсов в соответсвующие папки в `./public/assets/`.
 
-Вы можете добавить другие папки и подпапки, отредактировав файлы `.src/pages/[dir].astro` и `./src/pages/index.astro`
+Вы можете добавить другие папки и подпапки, отредактировав файлы `./src/pages/[dir].astro` и `./src/pages/index.astro`
 
 Проект настроен на размещение на [Netlify](https://www.netlify.com/) "одной кнопкой", инструкции для других хостингов смотрите в [документации Astro](https://docs.astro.build/en/guides/deploy/).
 

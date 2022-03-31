@@ -1,5 +1,6 @@
 {
   "name": "foundry-cdn",
+  "author": "Phenomen#1337",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,9 +10,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/svelte": "^0.0.2",
     "@astrojs/tailwind": "^0.0.2",
-    "astro": "^0.25.4",
-    "svelte": "^3.46.6"
+    "astro": "^0.25.4"
   }
 }
