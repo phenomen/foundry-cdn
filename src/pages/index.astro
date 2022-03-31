@@ -1,14 +1,14 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-const dirs = ['pictures', 'maps', 'tokens', 'tiles']
+import folders from '../folders.json';
 ---
 <DefaultLayout>
   <h1 class="font-medium text-xl my-10">Static CDN</h1>
-    {dirs.map((dir) => (
+    {folders.map((folder) => (
       <li>
           <a
           class="text-blue-600 hover:underline hover:text-blue-400"
-          href={dir}>{dir}
+          href={folder.folder}>{folder.title}
           </a>
       </li>
     ))}

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Изображения",
+    "folder": "pictures"
+  },
+  {
+    "title": "Карты",
+    "folder": "maps"
+  },
+  {
+    "title": "Токены",
+    "folder": "tokens"
+  },
+  {
+    "title": "Тайлы",
+    "folder": "tiles"
+  }
+]

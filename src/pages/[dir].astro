@@ -1,19 +1,18 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import ReadDir from '../components/ReadDir.astro';
-
-export function getStaticPaths() {
-  return [
-    {params: {dir: 'pictures'}},
-    {params: {dir: 'maps'}},
-    {params: {dir: 'tokens'}},
-    {params: {dir: 'tiles'}},
-  ];
-}
+import folders from '../folders.json';
 
 const { dir } = Astro.request.params;
----
 
+export function getStaticPaths() {
+return folders.map((f) => {
+    return {
+      params: { dir: f.folder },
+    };
+  });
+}
+---
 <DefaultLayout>
 	<ReadDir dir={dir} />
 </DefaultLayout>
