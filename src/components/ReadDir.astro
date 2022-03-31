@@ -1,7 +1,8 @@
 ---
-  import { readdirSync } from "node:fs";
-  const {dir} = Astro.props;
-  const assets = readdirSync("./public/assets/" + dir + "/");
+import * as fs from 'fs';
+
+const {dir} = Astro.props;
+const assets = fs.readdirSync("./public/assets/" + dir + "/");
 ---
 <h1 class="font-medium text-xl my-10">
 <a class="text-blue-600 hover:underline hover:text-blue-400" href="/">все</a> / {dir}
