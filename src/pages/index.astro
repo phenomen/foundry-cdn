@@ -1,6 +1,8 @@
 ---
+import * as fs from 'fs';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-import folders from '../folders.json';
+
+const folders = fs.readdirSync("./public/assets/");
 ---
 <DefaultLayout>
   <h1 class="font-medium text-xl mb-10">CDN</h1>
@@ -9,7 +11,7 @@ import folders from '../folders.json';
       <li>
           <a
           class="text-blue-600 hover:underline hover:text-blue-400"
-          href={folder.dir}>{folder.name}
+          href={folder}>{folder}
           </a>
       </li>
     ))}
