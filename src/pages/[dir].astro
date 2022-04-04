@@ -3,7 +3,6 @@ import * as fs from 'fs';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import ReadDir from '../components/ReadDir.astro';
 
-
 export async function getStaticPaths() {
   const folders = fs.readdirSync("./public/assets/");
   return folders.map((folder) => {
