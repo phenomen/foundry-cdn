@@ -1,19 +1,20 @@
 ---
 import * as fs from 'fs';
 
-const {dir} = Astro.props;
+const {dir, title} = Astro.props;
+//this is for future
+//const assets = Astro.glob('./public/assets/' + dir + '/*');
 const assets = fs.readdirSync("./public/assets/" + dir + "/");
 ---
-<h1 class="font-medium text-xl my-10">
-<a class="text-blue-600 hover:underline hover:text-blue-400" href="/">все</a> / {dir}
+<h1 class="font-medium text-xl mb-10">
+<a class="text-blue-600 hover:underline hover:text-blue-400" href="/">все</a> / {title}
 </h1>
-<div class="grid grid-cols-3 gap-4">
+<ul class="list-disc">
   {assets.map((asset) => (
-    <div class="flex flex-col text-center justify-items-center">
-      <a href={'/assets' + '/' + dir + '/' + asset} class="mx-auto">
-        <img src={'/assets' + '/' + dir + '/' + asset} alt={asset} class="h-64 aspect-square" />
+    <li>
+      <a href={'/assets' + '/' + dir + '/' + asset} target="_blank" class="text-blue-600 hover:underline hover:text-blue-400">
+        {asset}
       </a>
-      <span class="text-xs">{asset}</span>
-    </div>
+    </li>
   ))}
-</div>
+</ul>

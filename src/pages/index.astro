@@ -3,13 +3,15 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
 import folders from '../folders.json';
 ---
 <DefaultLayout>
-  <h1 class="font-medium text-xl my-10">Static CDN</h1>
+  <h1 class="font-medium text-xl mb-10">CDN</h1>
+  <ul>
     {folders.map((folder) => (
       <li>
           <a
           class="text-blue-600 hover:underline hover:text-blue-400"
-          href={folder.folder}>{folder.title}
+          href={folder.dir}>{folder.name}
           </a>
       </li>
     ))}
+  </ul>
 </DefaultLayout>
