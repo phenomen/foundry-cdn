@@ -7,11 +7,11 @@ const {dir} = Astro.props;
 const assets = fs.readdirSync("./public/assets/" + dir + "/");
 ---
 <h1 class="font-medium text-xl mb-10">
-<a class="text-blue-600 hover:underline hover:text-blue-400" href="/">все</a> / {dir}
+<a class="text-blue-600 hover:underline hover:text-blue-400" href="/">assets</a> / {dir}
 </h1>
-<ul class="list-disc">
+<ul class="space-y-2">
   {assets.map((asset) => (
-    <li>
+    <li class="p-4 rounded bg-gray-100">
       <a href={'/assets' + '/' + dir + '/' + asset} target="_blank" class="text-blue-600 hover:underline hover:text-blue-400">
         {asset}
       </a>
