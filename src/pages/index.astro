@@ -6,12 +6,12 @@ const folders = fs.readdirSync("./public/assets/");
 ---
 <DefaultLayout>
   <h1 class="font-medium text-xl mb-10">CDN</h1>
-  <ul>
+  <ul class="space-y-2">
     {folders.map((folder) => (
-      <li>
+      <li class="p-4 rounded bg-gray-100">
           <a
           class="text-blue-600 hover:underline hover:text-blue-400"
-          href={folder}>/{folder}
+          href={folder}>{folder}
           </a>
       </li>
     ))}
