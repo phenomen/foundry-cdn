@@ -6,15 +6,16 @@ import ReadDir from '../components/ReadDir.astro';
 export async function getStaticPaths() {
   const folders = fs.readdirSync("./public/assets/");
   return folders.map((folder) => {
-      return {
-        params: { dir: folder },
-        props: { folder }
-      };
-    });
+    return {
+      params: { dir: folder },
+      props: { folder }
+    };
+  });
 }
 
 const { folder } = Astro.props;
 ---
+
 <DefaultLayout>
-	<ReadDir dir={folder} />
+  <ReadDir dir={folder} />
 </DefaultLayout>
