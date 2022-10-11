@@ -1,14 +1,14 @@
 ---
-import * as fs from 'fs';
-import DefaultLayout from '../layouts/DefaultLayout.astro';
-import ReadDir from '../components/ReadDir.astro';
+import * as fs from "fs";
+import Layout from "../layouts/Layout.astro";
+import Directory from "../components/Directory.astro";
 
 export async function getStaticPaths() {
   const folders = fs.readdirSync("./public/assets/");
   return folders.map((folder) => {
     return {
       params: { dir: folder },
-      props: { folder }
+      props: { folder },
     };
   });
 }
@@ -16,6 +16,6 @@ export async function getStaticPaths() {
 const { folder } = Astro.props;
 ---
 
-<DefaultLayout>
-  <ReadDir dir={folder} />
-</DefaultLayout>
+<Layout>
+  <Directory dir={folder} />
+</Layout>
