@@ -10,12 +10,12 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@types/node": "^18.11.0",
     "@astrojs/svelte": "^1.0.2",
-    "@astrojs/tailwind": "^2.1.0",
-    "astro": "^1.5.0",
+    "@astrojs/tailwind": "^2.1.1",
+    "@types/node": "^18.11.3",
+    "astro": "^1.5.2",
     "svelte": "^3.52.0",
-    "tailwindcss": "^3.1.8",
+    "tailwindcss": "^3.2.0",
     "typescript": "^4.8.4",
     "vite": "^3.1.8"
   }
