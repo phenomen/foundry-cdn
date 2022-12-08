@@ -39,15 +39,15 @@
 
 <style>
   a {
-    @apply text-blue-600 hover:text-blue-800 px-2;
+    @apply text-black hover:text-gray-600 px-2;
   }
   .asset {
-    @apply flex flex-row items-center rounded border border-blue-600 justify-between text-sm;
+    @apply flex flex-row items-center rounded border border-black justify-between text-sm;
   }
   audio::-webkit-media-controls-panel {
     @apply bg-white rounded-none;
   }
   input {
-    @apply flex-1 m-1 p-1 focus:outline-none border-b border-blue-600;
+    @apply flex-1 m-1 p-1 focus:outline-none border-b border-black;
   }
 </style>
