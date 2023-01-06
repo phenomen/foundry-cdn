@@ -37,7 +37,7 @@
   </div>
 {/each}
 
-<style>
+<style lang="postcss">
   a {
     @apply text-black hover:text-gray-600 px-2;
   }
