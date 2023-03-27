@@ -3,7 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
 export default defineConfig({
-  //замените на ваш домен
-  site: "https://смотри-read.me",
+  site: "https://website.com", //замените на ваш домен
   integrations: [tailwind(), svelte()],
 });

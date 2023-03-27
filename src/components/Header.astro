@@ -1,0 +1,10 @@
+---
+const site = import.meta.env.SITE;
+---
+<header>
+
+<h1 class="font-black text-xl my-4">STATIC CDN</h1>
+
+{site === 'https://website.com' && <div class="bg-black rounded text-white my-4 w-full p-2">Откройте <code class="text-yellow-400">astro.config.mjs</code> и замените <code class="text-yellow-400">https://website.com</code> на свой домен.</div>}
+
+</header>
