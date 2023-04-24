@@ -4,10 +4,24 @@ import Asset from "../components/Asset.svelte";
 
 const { dir } = Astro.props;
 const assets = fs.readdirSync("./public/assets/" + dir + "/");
+
+const breadcrumbs = dir.split("/");
 ---
 
 <h1 class="font-medium text-xl mb-10">
-  <a class="text-black hover:underline" href="/">assets</a> / {dir}
+  <a class="text-black hover:underline" href="/"> / assets</a>
+  {
+    breadcrumbs.map((crumb, index) => {
+      const url = breadcrumbs.slice(0, index + 1).join("/");
+      return (
+        <span>
+          <a class="text-black hover:underline" href={`/${url}`}>
+            / {crumb}
+          </a>
+        </span>
+      );
+    })
+  }
 </h1>
 
 <div class="flex flex-col gap-2">

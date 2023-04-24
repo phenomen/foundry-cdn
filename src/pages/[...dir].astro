@@ -1,0 +1,45 @@
+---
+import fs from "node:fs";
+import path from "node:path";
+import Layout from "../layouts/Layout.astro";
+import Directory from "../components/Directory.astro";
+
+export async function getStaticPaths() {
+  const rootDir = "./public/assets/";
+
+  function getAllDirectories(dirPath) {
+    let dirs = [];
+
+    const files = fs.readdirSync(dirPath);
+
+    files.forEach((file) => {
+      const filePath = path.join(dirPath, file);
+      const stat = fs.statSync(filePath);
+
+      if (stat.isDirectory()) {
+        dirs.push(file);
+
+        const subDirs = getAllDirectories(filePath);
+        dirs = [...dirs, ...subDirs.map((subDir) => `${file}/${subDir}`)];
+      }
+    });
+
+    return dirs;
+  }
+
+  const allDirs = getAllDirectories(rootDir);
+
+  return allDirs.map((dir) => {
+    return {
+      params: { dir },
+      props: { folder: dir },
+    };
+  });
+}
+
+const { folder } = Astro.props;
+---
+
+<Layout>
+  <Directory dir={folder} />
+</Layout>
