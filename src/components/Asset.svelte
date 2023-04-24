@@ -39,7 +39,9 @@
         </svg>
       </a>
       {#if extImages.includes(ext)}
-        <div class="w-32 h-20 bg-cover bg-center" style="background-image: url({localurl});" />
+        <a href={localurl} target="_blank">
+          <div class="w-32 h-20 bg-cover bg-center" style="background-image: url({localurl});" />
+        </a>
       {:else if extSounds.includes(ext)}
         <audio controls class="bg-white rounded-none">
           <source src={localurl} type="audio/{ext}" />
