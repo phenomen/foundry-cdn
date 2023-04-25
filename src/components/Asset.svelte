@@ -7,6 +7,12 @@
   const extImages = ["webp", "jpeg", "jpg", "png"];
   const extSounds = ["mp3", "ogg", "wav"];
   const extVideos = ["mp4", "webm"];
+
+  assets.sort((a, b) => {
+    const aIsFolder = !/\./.test(a);
+    const bIsFolder = !/\./.test(b);
+    return aIsFolder === bIsFolder ? a.localeCompare(b) : aIsFolder ? -1 : 1;
+  });
 </script>
 
 {#each assets as asset}
@@ -16,15 +22,17 @@
   {@const publicurl = site + "/assets/" + dir + "/" + encodedName}
 
   {#if ext !== ""}
-    <div class="flex flex-row items-center rounded border border-black justify-between text-sm">
+    <div
+      class="flex flex-row items-center rounded border border-black justify-between text-sm bg-white"
+    >
       <input
         readonly
         onclick="select()"
         value={publicurl}
         class="flex-1 m-1 p-1 focus:outline-none border-b border-black"
       />
-      <a href={localurl} target="_blank" class="text-black hover:text-gray-600 px-2"
-        ><svg
+      <a href={localurl} target="_blank" class="text-black hover:text-gray-600 px-2">
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -39,8 +47,8 @@
         </svg>
       </a>
       {#if extImages.includes(ext)}
-        <a href={localurl} target="_blank">
-          <div class="w-32 h-20 bg-cover bg-center" style="background-image: url({localurl});" />
+        <a href={localurl} target="_blank" class=" border-l border-black ring-transparent">
+          <div class="w-24 h-24 bg-cover bg-center" style="background-image: url({localurl});" />
         </a>
       {:else if extSounds.includes(ext)}
         <audio controls class="bg-white rounded-none">
@@ -50,10 +58,11 @@
     </div>
   {:else}
     <a
-      class="text-black p-2 rounded border hover:text-white hover:bg-black border-black"
+      class="text-black p-2 rounded border hover:text-white hover:bg-black border-black bg-white items-center"
       href={"/" + dir + "/" + asset}
     >
-      / {asset}
+      <span> / </span>
+      {asset}
     </a>
   {/if}
 {/each}

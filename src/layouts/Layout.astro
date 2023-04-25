@@ -2,7 +2,7 @@
 import Header from "../components/Header.astro";
 ---
 
-<html lang="en">
+<html lang="en" class="bg-gray-100">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -11,10 +11,11 @@ import Header from "../components/Header.astro";
 
   <body>
     <main class="py-12 px-2 max-w-4xl mx-auto flex flex-col">
-    <Header />
+      <Header />
 
-    <slot />
+      <slot />
 
-    <main>
+      <main></main>
+    </main>
   </body>
 </html>

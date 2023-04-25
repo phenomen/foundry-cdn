@@ -9,7 +9,10 @@ const folders = fs.readdirSync("./public/assets/");
   <div class="flex flex-col gap-2">
     {
       folders.map((folder) => (
-        <a class="text-black p-2 rounded border hover:text-white hover:bg-black border-black" href={folder}>
+        <a
+          class="text-black p-2 rounded border hover:text-white hover:bg-black border-black bg-white"
+          href={folder}
+        >
           / {folder}
         </a>
       ))
